@@ -3,35 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bird Hero Section Recreation</title>
+    <title>Bird Hero Section</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            -webkit-font-smoothing: antialiased;
         }
     </style>
 </head>
-<body class="bg-white text-gray-900">
+<body class="bg-white text-gray-900 antialiased relative">
 
     <!-- Navigation -->
-    <nav class="w-full bg-white py-5 px-6 md:px-8 lg:px-12 flex items-center justify-between">
+    <nav class="w-full bg-white py-5 px-6 md:px-8 lg:px-12 flex items-center justify-between sticky top-0 z-40">
         <!-- Logo -->
         <div class="flex-shrink-0">
-            <div class="w-9 h-9 bg-black flex items-center justify-center rounded-sm">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M18 6L6 18M6 6L18 18" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" style="display:none;"/> 
-                    <!-- Abstract Bird/F shape approximation -->
-                    <path d="M4 4H20V10H10L14 14H20V20H4V4Z" fill="white"/>
-                    <path d="M14 4H20V10H14V4Z" fill="white"/>
-                    <path d="M5 6H18V9H12L10 11V18H5V6Z" fill="white"/>
-                </svg>
-            </div>
+            <img src="https://placehold.co/40x40/000000/ffffff?text=B" alt="Bird Logo" class="h-10 w-10 rounded-sm">
         </div>
 
-        <!-- Nav Links -->
-        <div class="hidden md:flex items-center gap-8 text-[15px] font-medium text-gray-900">
+        <!-- Center Links (Hidden on mobile) -->
+        <div class="hidden md:flex items-center space-x-8 text-[15px] font-medium text-gray-900">
             <a href="#" class="hover:text-gray-600">Product</a>
             <a href="#" class="hover:text-gray-600">Solutions</a>
             <a href="#" class="hover:text-gray-600">Resources</a>
@@ -39,107 +30,82 @@
         </div>
 
         <!-- Right Actions -->
-        <div class="flex items-center gap-6">
+        <div class="flex items-center space-x-6">
             <a href="#" class="text-[15px] font-medium text-gray-900 hover:text-gray-600 hidden sm:block">Log in</a>
-            <a href="#" class="bg-black text-white text-[15px] font-medium px-5 py-2.5 rounded-md hover:bg-gray-800 transition-colors">Contact sales</a>
+            <a href="#" class="bg-black text-white text-[15px] font-medium px-5 py-2.5 rounded-lg hover:bg-gray-800 transition-colors">Contact sales</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <main class="max-w-[1400px] mx-auto px-6 md:px-8 lg:px-12 pt-16 pb-12">
+    <!-- Main Content -->
+    <main class="max-w-[1200px] mx-auto px-6 md:px-8 pt-16 md:pt-24">
         
-        <!-- Hero Content -->
+        <!-- Hero Text -->
         <div class="max-w-4xl">
-            <h1 class="text-5xl md:text-[64px] leading-[1.1] font-medium tracking-tight text-black mb-6">
+            <h1 class="text-5xl md:text-[4rem] leading-[1.1] font-medium tracking-tight text-black mb-6">
                 Activate customers and ensure secure transactions at scale
             </h1>
-            <p class="text-xl md:text-[22px] leading-relaxed text-gray-500 max-w-3xl mb-10 font-normal">
+            <p class="text-xl md:text-[1.35rem] leading-relaxed text-gray-500 max-w-3xl font-normal mb-10">
                 Bird powers your fintech platform with compliant messaging, instant authentication, and lifecycle campaigns that build trust.
             </p>
             
-            <div class="flex flex-wrap gap-4 mb-24">
-                <a href="#" class="bg-[#2563EB] text-white text-base font-medium px-6 py-3 rounded-md hover:bg-blue-700 transition-colors">
+            <div class="flex flex-wrap gap-4">
+                <a href="#" class="bg-[#246BFD] text-white text-base font-medium px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
                     Contact sales
                 </a>
-                <a href="#" class="bg-white text-gray-900 border border-gray-200 text-base font-medium px-6 py-3 rounded-md hover:bg-gray-50 transition-colors">
+                <a href="#" class="bg-white border border-gray-200 text-gray-900 text-base font-medium px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors">
                     Get started
                 </a>
             </div>
         </div>
 
         <!-- Logos Section -->
-        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-12 border-b border-transparent">
-            <div class="text-xs text-gray-500 font-medium leading-tight max-w-[140px]">
+        <div class="mt-24 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 lg:gap-12 border-gray-100">
+            <div class="text-xs text-gray-500 font-medium max-w-[150px] leading-relaxed">
                 Fortune 500 companies that depend on Bird
             </div>
             
-            <div class="flex flex-wrap items-center gap-8 md:gap-12 lg:gap-16 w-full md:w-auto opacity-90">
-                <!-- Pinterest -->
-                <div class="flex items-center gap-2">
-                    <svg class="h-6 w-auto" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.65 0-5.789 2.738-5.789 5.57 0 1.104.425 2.286.956 2.929.105.128.12.24.089.372-.098.403-.316 1.292-.358 1.475-.057.241-.19.292-.439.176-1.635-.762-2.653-3.156-2.653-5.071 0-4.127 3.004-7.914 8.663-7.914 4.548 0 8.084 3.242 8.084 7.575 0 4.522-2.851 8.165-6.808 8.165-1.329 0-2.578-.691-3.005-1.507 0 0-.658 2.505-.818 3.119-.295 1.135-1.092 2.559-1.626 3.428C9.289 23.86 10.618 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/>
-                    </svg>
-                    <span class="font-bold text-xl tracking-tight">Pinterest</span>
-                </div>
-
-                <!-- Uber -->
-                <div class="flex items-center">
-                    <span class="font-medium text-2xl tracking-tight">Uber</span>
-                </div>
-
-                <!-- Square -->
-                <div class="flex items-center gap-2">
-                    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
-                        <rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" stroke-width="2.5" fill="none"/>
-                        <rect x="8" y="8" width="8" height="8" rx="1" fill="currentColor"/>
-                    </svg>
-                    <span class="font-medium text-xl tracking-tight">Square</span>
-                </div>
-
-                <!-- Airwallex -->
-                <div class="flex items-center gap-2">
-                    <svg class="h-6 w-auto" viewBox="0 0 30 24" fill="currentColor">
-                        <path d="M22.5 6C20.5 6 19 7.5 18 9C17 7.5 15.5 6 13.5 6C10.5 6 9 9 7.5 12C9 15 10.5 18 13.5 18C15.5 18 17 16.5 18 15C19 16.5 20.5 18 22.5 18C25.5 18 28 15.5 28 12C28 8.5 25.5 6 22.5 6ZM7.5 12C6 9 4.5 6 1.5 6V18C4.5 18 6 15 7.5 12Z" fill="currentColor"/>
-                    </svg>
-                    <span class="font-bold text-lg tracking-tight">Airwallex</span>
-                </div>
-
-                <!-- Adobe -->
-                <div class="flex items-center gap-2">
-                    <svg class="h-6 w-auto" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M15.1 2H24v20L15.1 2zM8.9 2H0v20L8.9 2zM12 9.4L17.6 22h-2.9l-1.5-4h-2.5l-1.5 4H6.4L12 9.4z"/>
-                    </svg>
-                    <span class="font-bold text-lg tracking-tight">Adobe</span>
-                </div>
+            <div class="flex flex-wrap items-center gap-8 md:gap-12 lg:gap-16 opacity-90 grayscale">
+                <img src="https://placehold.co/110x28/ffffff/000000?text=Pinterest&font=roboto" alt="Pinterest" class="h-7 object-contain">
+                <img src="https://placehold.co/80x28/ffffff/000000?text=Uber&font=roboto" alt="Uber" class="h-7 object-contain">
+                <img src="https://placehold.co/90x28/ffffff/000000?text=Square&font=roboto" alt="Square" class="h-7 object-contain">
+                <img src="https://placehold.co/110x28/ffffff/000000?text=Airwallex&font=roboto" alt="Airwallex" class="h-7 object-contain">
+                <img src="https://placehold.co/90x28/ffffff/000000?text=Adobe&font=roboto" alt="Adobe" class="h-7 object-contain">
             </div>
         </div>
 
         <!-- Hero Image -->
-        <div class="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden rounded-t-2xl">
-            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop" alt="Person using device" class="w-full h-full object-cover object-center">
+        <div class="mt-12 relative w-full">
+            <!-- Main Image Placeholder -->
+            <img src="https://placehold.co/1200x600/c4a484/333333?text=Hero+Image:+Person+looking+at+device" alt="Hero Visual" class="w-full rounded-t-3xl object-cover h-[400px] md:h-[500px] lg:h-[600px]">
             
-            <!-- Floating UI Element (Simulated) -->
-            <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-64 h-24 bg-white/80 backdrop-blur-md rounded-t-xl shadow-lg flex items-center justify-center">
-                <!-- Placeholder for the UI element seen in screenshot -->
+            <!-- Mock Notification Overlay (Simulating the Starbucks notification in screenshot) -->
+            <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 md:translate-y-0 md:bottom-10 bg-white/80 backdrop-blur-md p-3 rounded-xl shadow-lg flex items-center gap-3 border border-white/40 w-64 hidden md:flex">
+                <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center overflow-hidden">
+                    <img src="https://placehold.co/40x40/cccccc/999999?text=S" alt="Icon">
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xs font-semibold text-gray-800">Starbucks Coffee</span>
+                    <span class="text-[10px] text-gray-600">Your order is ready!</span>
+                </div>
             </div>
         </div>
 
     </main>
 
     <!-- Cookie Consent Banner -->
-    <div class="fixed bottom-4 right-4 z-50 max-w-[480px] bg-white p-6 rounded-lg shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-gray-100">
-        <p class="text-[14px] leading-relaxed text-gray-700 mb-4">
+    <div class="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 max-w-[400px] w-full bg-white p-6 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-gray-100">
+        <p class="text-[13px] leading-relaxed text-gray-800 mb-4">
             By clicking “Accept”, you agree to the use of cookies on your device or browser to enhance site navigation, analyze site usage, and assist in our marketing efforts.
         </p>
-        <div class="flex gap-4 mb-6 text-[14px]">
-            <a href="#" class="text-blue-600 hover:underline">Privacy Statement</a>
-            <a href="#" class="text-blue-600 hover:underline">Remove my data</a>
+        <div class="flex gap-4 mb-6 text-[13px]">
+            <a href="#" class="text-blue-600 hover:underline font-medium">Privacy Statement</a>
+            <a href="#" class="text-blue-600 hover:underline font-medium">Remove my data</a>
         </div>
         <div class="flex gap-3">
-            <button class="flex-1 bg-[#2563EB] hover:bg-blue-700 text-white text-sm font-medium py-2.5 px-4 rounded transition-colors">
+            <button class="flex-1 bg-[#246BFD] hover:bg-blue-700 text-white text-[13px] font-medium py-2.5 px-4 rounded-md transition-colors">
                 Accept all cookies
             </button>
-            <button class="flex-1 bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 text-sm font-medium py-2.5 px-4 rounded transition-colors">
+            <button class="flex-1 bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 text-[13px] font-medium py-2.5 px-4 rounded-md transition-colors">
                 Cookie settings
             </button>
         </div>
