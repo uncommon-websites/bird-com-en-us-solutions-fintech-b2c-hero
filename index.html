@@ -3,56 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bird - Fintech Platform</title>
+    <title>Hero Section</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Animation keyframes */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-                filter: blur(4px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-                filter: blur(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-
         @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.98);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+            from { opacity: 0; transform: scale(0.97); }
+            to { opacity: 1; transform: scale(1); }
         }
 
-        /* Base animation classes */
         .animate-fade-in-up {
             opacity: 0;
-            animation: fadeInUp 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+            animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
-
         .animate-fade-in {
             opacity: 0;
-            animation: fadeIn 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+            animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
-
         .animate-scale-in {
             opacity: 0;
-            animation: scaleIn 1s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+            animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        /* Staggered delays */
         .delay-0 { animation-delay: 0ms; }
         .delay-100 { animation-delay: 100ms; }
         .delay-200 { animation-delay: 200ms; }
@@ -61,143 +40,80 @@
         .delay-500 { animation-delay: 500ms; }
         .delay-600 { animation-delay: 600ms; }
 
-        /* Typography utilities */
         .text-balance { text-wrap: balance; }
         .text-pretty { text-wrap: pretty; }
 
-        /* Custom font smoothing */
-        body {
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        /* Accessibility */
         @media (prefers-reduced-motion: reduce) {
-            .animate-fade-in-up,
-            .animate-fade-in,
-            .animate-scale-in {
+            .animate-fade-in-up, .animate-fade-in, .animate-scale-in {
                 animation: none;
                 opacity: 1;
                 transform: none;
-                filter: none;
             }
         }
     </style>
 </head>
-<body class="bg-white text-gray-900 font-sans">
+<body class="bg-white font-sans text-gray-900 antialiased selection:bg-blue-100 selection:text-blue-900">
 
     <!-- Navigation -->
-    <header class="w-full bg-white animate-fade-in delay-0">
-        <div class="max-w-[1440px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
-            <!-- Left: Logo & Links -->
-            <div class="flex items-center gap-12">
-                <!-- Logo -->
-                <a href="#" class="block group">
-                    <div class="w-10 h-10 bg-black flex items-center justify-center text-white transition-transform group-hover:scale-105 duration-300">
-                        <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                            <path d="M21 12.5C21 12.5 18 12.5 16 10.5C14 8.5 14 5.5 14 5.5C14 5.5 12 5.5 10 7.5C8 9.5 8 12.5 8 12.5L3 17.5L5.5 20L10.5 15C10.5 15 13.5 15 15.5 13C17.5 11 17.5 8 17.5 8L21 12.5Z" />
-                        </svg>
-                    </div>
-                </a>
+    <header class="max-w-[1440px] mx-auto px-6 py-5 flex items-center justify-between animate-fade-in delay-0">
+        <div class="flex items-center">
+            <img src="https://placehold.co/32x32/000000/ffffff?text=B" alt="Logo" class="w-8 h-8 rounded-sm">
+        </div>
+        
+        <nav class="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
+            <a href="#" class="text-[15px] font-medium text-black hover:text-gray-600 transition-colors duration-200">Product</a>
+            <a href="#" class="text-[15px] font-medium text-black hover:text-gray-600 transition-colors duration-200">Solutions</a>
+            <a href="#" class="text-[15px] font-medium text-black hover:text-gray-600 transition-colors duration-200">Resources</a>
+            <a href="#" class="text-[15px] font-medium text-black hover:text-gray-600 transition-colors duration-200">Company</a>
+        </nav>
 
-                <!-- Desktop Nav Links -->
-                <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium text-gray-900">
-                    <a href="#" class="hover:text-gray-600 transition-colors">Product</a>
-                    <a href="#" class="hover:text-gray-600 transition-colors">Solutions</a>
-                    <a href="#" class="hover:text-gray-600 transition-colors">Resources</a>
-                    <a href="#" class="hover:text-gray-600 transition-colors">Company</a>
-                </nav>
-            </div>
-
-            <!-- Right: Actions -->
-            <div class="flex items-center gap-6 text-[15px] font-medium">
-                <a href="#" class="hidden sm:block hover:text-gray-600 transition-colors">Log in</a>
-                <a href="#" class="bg-black text-white px-5 py-2.5 rounded hover:bg-gray-800 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-0.5">Contact sales</a>
-            </div>
+        <div class="flex items-center gap-6">
+            <a href="#" class="text-[15px] font-medium text-black hover:text-gray-600 transition-colors duration-200 hidden sm:block">Log in</a>
+            <a href="#" class="bg-black text-white text-[15px] font-medium px-4 py-2 rounded-md hover:opacity-90 transition-all duration-200 active:scale-[0.97]">Contact sales</a>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="max-w-[1440px] mx-auto px-6 lg:px-12 pt-20 lg:pt-32">
+    <!-- Main Hero Section -->
+    <main class="max-w-[1440px] mx-auto px-6 pt-16 md:pt-24">
         
-        <!-- Hero Text Section -->
-        <div class="max-w-5xl">
-            <h1 class="text-5xl sm:text-6xl lg:text-[5.5rem] font-medium leading-[1.05] tracking-tight text-gray-900 text-balance animate-fade-in-up delay-100">
+        <!-- Hero Content -->
+        <div class="max-w-[1000px]">
+            <h1 class="text-5xl md:text-7xl lg:text-[84px] font-semibold leading-[1.05] tracking-[-0.03em] text-black text-balance animate-fade-in-up delay-100">
                 Activate customers and ensure secure transactions at scale
             </h1>
             
-            <p class="mt-8 text-lg sm:text-xl lg:text-2xl text-gray-500 leading-relaxed max-w-3xl text-pretty animate-fade-in-up delay-200">
+            <p class="mt-6 text-lg md:text-[22px] text-gray-500 leading-[1.5] max-w-[680px] text-pretty animate-fade-in-up delay-200">
                 Bird powers your fintech platform with compliant messaging, instant authentication, and lifecycle campaigns that build trust.
             </p>
             
-            <div class="mt-10 flex flex-wrap gap-4 animate-fade-in-up delay-300">
-                <a href="#" class="bg-[#2563EB] text-white px-7 py-3.5 rounded font-medium hover:bg-blue-700 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-0.5">
+            <div class="mt-10 md:mt-12 flex flex-wrap items-center gap-4 animate-fade-in-up delay-300">
+                <a href="#" class="bg-[#2563EB] text-white text-[15px] font-medium px-6 py-3.5 rounded-lg hover:bg-blue-700 transition-all duration-200 active:scale-[0.97]">
                     Contact sales
                 </a>
-                <a href="#" class="bg-white text-gray-900 border border-gray-200 px-7 py-3.5 rounded font-medium hover:bg-gray-50 hover:border-gray-300 transition-all duration-300">
+                <a href="#" class="bg-white text-black border border-gray-200 text-[15px] font-medium px-6 py-3.5 rounded-lg hover:bg-gray-50 transition-all duration-200 active:scale-[0.97]">
                     Get started
                 </a>
             </div>
         </div>
 
-        <!-- Social Proof / Logos -->
-        <div class="mt-24 lg:mt-36 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 lg:gap-12 animate-fade-in delay-400">
-            <p class="text-sm text-gray-500 font-medium max-w-[160px] leading-tight shrink-0">
-                Fortune 500 companies that depend on Bird
+        <!-- Logo Cloud -->
+        <div class="mt-24 md:mt-32 flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-20 animate-fade-in-up delay-400">
+            <p class="text-[13px] text-gray-500 leading-[1.4] max-w-[150px]">
+                Fortune 500 companies<br>that depend on Bird
             </p>
             
-            <div class="w-full flex flex-wrap items-center justify-between gap-8 lg:gap-12 opacity-90 grayscale hover:grayscale-0 transition-all duration-500">
-                <!-- Pinterest -->
-                <div class="h-8">
-                    <svg viewBox="0 0 100 30" class="h-full w-auto fill-current text-black">
-                        <path d="M15,0 C6.7,0 0,6.7 0,15 C0,21.4 3.9,26.9 9.5,29 L9.5,19 L7,19 L7,15 L9.5,15 L9.5,12 C9.5,9.5 11,7.5 14.5,7.5 L17.5,7.5 L17.5,11.5 L15.5,11.5 C14.2,11.5 14,12.1 14,13 L14,15 L17.5,15 L17,19 L14,19 L14,29.5 C22.5,28.5 29,22 29,15 C29,6.7 22.3,0 15,0 Z" transform="scale(0.8)"/>
-                        <text x="35" y="20" font-family="sans-serif" font-weight="bold" font-size="18">Pinterest</text>
-                    </svg>
-                </div>
-
-                <!-- Uber -->
-                <div class="h-6">
-                    <svg viewBox="0 0 60 20" class="h-full w-auto fill-current text-black">
-                        <path d="M6,18 L6,2 L10,2 L10,12 C10,14.5 11.5,15.5 13,15.5 C14.5,15.5 16,14.5 16,12 L16,2 L20,2 L20,18 L16,18 L16,16 C15.5,17.5 14,18.5 12.5,18.5 C9,18.5 6,16 6,18 Z M24,18 L24,0 L28,0 L28,7 C29,5.5 30.5,5 32,5 C35,5 37,7.5 37,11.5 C37,15.5 35,18.5 31.5,18.5 C30,18.5 29,18 28,17 L28,18 L24,18 Z M28,11.5 C28,13.5 29,15 30.5,15 C32,15 33,13.5 33,11.5 C33,9.5 32,8 30.5,8 C29,8 28,9.5 28,11.5 Z M41,18.5 C38,18.5 36,16.5 36,13.5 L36,13.5 C36,10.5 38,8.5 41,8.5 C43.5,8.5 45.5,10 45.5,13 L45.5,14 L39.5,14 C39.5,15.5 40.5,16 41.5,16 C42.5,16 43,15.5 43.5,15 L45,16 C44,17.5 43,18.5 41,18.5 Z M41,11 C40,11 39.5,11.5 39.5,12.5 L42.5,12.5 C42.5,11.5 42,11 41,11 Z M50,18 L50,9 L53.5,9 L53.5,11 C54,9.5 55,9 56,9 L56,12.5 C55,12.5 53.5,13 53.5,14.5 L53.5,18 L50,18 Z"/>
-                    </svg>
-                </div>
-
-                <!-- Square -->
-                <div class="h-7">
-                    <svg viewBox="0 0 100 24" class="h-full w-auto fill-current text-black">
-                        <rect x="0" y="2" width="20" height="20" rx="4" stroke="currentColor" stroke-width="3" fill="none"/>
-                        <rect x="6" y="8" width="8" height="8" rx="1" fill="currentColor"/>
-                        <text x="30" y="19" font-family="sans-serif" font-weight="600" font-size="18" letter-spacing="-0.5">Square</text>
-                    </svg>
-                </div>
-
-                <!-- Airwallex -->
-                <div class="h-6">
-                    <svg viewBox="0 0 120 24" class="h-full w-auto fill-current text-black">
-                        <path d="M10,12 C10,8 14,8 14,12 C14,16 10,16 10,12 M0,12 C0,18 5,22 10,22 C13,22 15,20 16,18 C17,20 19,22 22,22 C27,22 32,18 32,12 C32,6 27,2 22,2 C19,2 17,4 16,6 C15,4 13,2 10,2 C5,2 0,6 0,12 Z M22,12 C22,16 18,16 18,12 C18,8 22,8 22,12 Z" transform="scale(0.7) translate(0, 2)"/>
-                        <text x="30" y="18" font-family="sans-serif" font-weight="bold" font-size="16">Airwallex</text>
-                    </svg>
-                </div>
-
-                <!-- Adobe -->
-                <div class="h-7">
-                    <svg viewBox="0 0 100 24" class="h-full w-auto fill-current text-black">
-                        <path d="M14,2 L24,22 L18,22 L16,16 L10,16 L14,2 M4,2 L10,22 L0,22 L4,2 M24,2 L28,22 L20,22 L24,2" transform="scale(0.8) translate(0, 2)"/>
-                        <text x="30" y="19" font-family="sans-serif" font-weight="bold" font-size="18">Adobe</text>
-                    </svg>
-                </div>
+            <div class="flex flex-wrap items-center gap-8 md:gap-12 lg:gap-16">
+                <img src="https://placehold.co/120x32/ffffff/000000?text=Pinterest" alt="Pinterest" class="h-6 md:h-7 w-auto object-contain opacity-90 mix-blend-multiply">
+                <img src="https://placehold.co/80x32/ffffff/000000?text=Uber" alt="Uber" class="h-6 md:h-7 w-auto object-contain opacity-90 mix-blend-multiply">
+                <img src="https://placehold.co/100x32/ffffff/000000?text=Square" alt="Square" class="h-6 md:h-7 w-auto object-contain opacity-90 mix-blend-multiply">
+                <img src="https://placehold.co/130x32/ffffff/000000?text=Airwallex" alt="Airwallex" class="h-6 md:h-7 w-auto object-contain opacity-90 mix-blend-multiply">
+                <img src="https://placehold.co/100x32/ffffff/000000?text=Adobe" alt="Adobe" class="h-6 md:h-7 w-auto object-contain opacity-90 mix-blend-multiply">
             </div>
         </div>
 
         <!-- Hero Image -->
-        <div class="mt-16 relative w-full rounded-t-2xl overflow-hidden animate-scale-in delay-500">
-            <!-- Using placehold.co as requested for the image -->
-            <img src="https://placehold.co/1400x800/e5e0d8/a39e93?text=Hero+Image+Placeholder" 
-                 alt="Person using fintech platform" 
-                 class="w-full h-auto object-cover min-h-[400px] lg:min-h-[600px] rounded-t-2xl shadow-2xl">
-            
-            <!-- Decorative gradient overlay to match the warm tone of the original -->
-            <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none"></div>
+        <div class="mt-12 md:mt-16 animate-scale-in delay-500">
+            <img src="https://placehold.co/1392x720/e2e8f0/94a3b8?text=Hero+Image" alt="Man looking at phone in living room" class="w-full h-[400px] md:h-[600px] lg:h-[720px] object-cover rounded-[24px] md:rounded-[32px]">
         </div>
 
     </main>
